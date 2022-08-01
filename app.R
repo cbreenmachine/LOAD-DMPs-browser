@@ -1,3 +1,6 @@
+
+library(BiocManager)
+options(repos = BiocManager::repositories())
 library(data.table)
 library(tidyverse)
 library(ggbio)
@@ -139,7 +142,10 @@ ui <- pageWithSidebar(
     actionButton(inputId = 'update', "Generate Plot"),
     
     shiny::br(),
-    shiny::p("Funding provided by R01, CIBM, etc..."),
+
+    shiny::p("Plots take a few seconds to render of clicking 'Generate Plot'. 
+             Data shown here include 42 LOAD versus 42 controls."),
+    shiny::br(),
     shiny::p("For feature requests and bug reports, please email cebreen@wisc.edu")
   ),
   
